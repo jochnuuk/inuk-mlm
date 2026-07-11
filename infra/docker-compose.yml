@@ -1,0 +1,19 @@
+services:
+  inukmlm:
+    image: python:3.11-slim
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace
+    env_file:
+      - ../.env
+    command: bash -lc "pip install -r requirements.txt && python app/main.py"
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:

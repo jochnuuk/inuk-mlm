@@ -1,0 +1,10 @@
+duckdb==1.0.0
+ibis-framework[duckdb,postgres]>=10.0.0
+raglite
+sentence-transformers
+transformers
+torch
+python-dotenv
+pydantic
+fastapi
+uvicorn
